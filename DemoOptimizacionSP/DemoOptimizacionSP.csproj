@@ -41,6 +41,10 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Publishing.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -51,9 +55,27 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\BlobCache\BlobCache.EventReceiver.cs">
+      <DependentUpon>BlobCache.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ImageRenditions\ImageRenditions.EventReceiver.cs">
+      <DependentUpon>ImageRenditions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\OutputCache\OutputCache.EventReceiver.cs">
+      <DependentUpon>OutputCache.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Features\BlobCache\BlobCache.feature">
+      <FeatureId>{6054288c-7918-4af1-af50-e12e6ab2fa24}</FeatureId>
+    </None>
+    <None Include="Features\OutputCache\OutputCache.feature">
+      <FeatureId>{a673c783-7e5c-4230-8b3e-9673d0be455f}</FeatureId>
+    </None>
+    <None Include="Features\ImageRenditions\ImageRenditions.feature">
+      <FeatureId>{3d314eba-ec80-4be9-a6c8-4f9f003904b2}</FeatureId>
+    </None>
     <None Include="key.snk" />
     <None Include="Package\Package.package">
       <PackageId>{ce96cfc2-6a20-42d0-9bfe-68de96676960}</PackageId>
@@ -62,8 +84,17 @@
       <DependentUpon>Package.package</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Features\" />
+    <Content Include="Features\BlobCache\BlobCache.Template.xml">
+      <DependentUpon>BlobCache.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\OutputCache\OutputCache.Template.xml">
+      <DependentUpon>OutputCache.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\ImageRenditions\ImageRenditions.Template.xml">
+      <DependentUpon>ImageRenditions.feature</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" 
-        Id="ce96cfc2-6a20-42d0-9bfe-68de96676960" 
-        solutionId="ce96cfc2-6a20-42d0-9bfe-68de96676960" 
-        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
-        name="DemoOptimizacionSP"
-        sharePointProductVersion="15.0">
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ce96cfc2-6a20-42d0-9bfe-68de96676960" solutionId="ce96cfc2-6a20-42d0-9bfe-68de96676960" resetWebServer="false" sharePointProductVersion="15.0" name="DemoOptimizacionSP" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="6054288c-7918-4af1-af50-e12e6ab2fa24" />
+    <featureReference itemId="3d314eba-ec80-4be9-a6c8-4f9f003904b2" />
+    <featureReference itemId="a673c783-7e5c-4230-8b3e-9673d0be455f" />
+  </features>
 </package>
